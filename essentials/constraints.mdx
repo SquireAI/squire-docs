@@ -1,0 +1,22 @@
+---
+title: 'Constraints'
+description: 'Limitations of the alpha product'
+icon: 'anchor'
+---
+
+Today Squire is optimized for Typescript code only (.ts & .tsx), as part of our first launch we’re ensuring accuracy in a language we deeply understand. Very quickly we’ll be opening up our capabilities to all languages when we’re satisfied with our outputs.
+If you want us to consider a specific language send us a note founders@echolayer.com
+
+Currently you can not call Squire on the PR that it opens itself.
+
+To put this in context with an example: You have an open PR and ask Squire to change a variable. Squire opens a new PR against yours with the code change. You ask Squire to make another change on Squire's open PR - this will not work.
+
+## Interaction Constraints
+
+When you invoke Squire to complete a task treat it like any other engineer, trust that we are working on the change and will post a PR asap. If you update your PR after calling Squire, but before we respond, you should expect a merge conflict accordingly.
+
+There are some other example scenarios that could cause merge conflicts during the GitHub workflow today:
+- If you update the existing PR after our bot has shipped a PR
+- If you call Squire to make a fix, then update your PR, then try to merge our PR
+
+We will not resolve merge conflicts.

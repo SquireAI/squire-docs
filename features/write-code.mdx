@@ -1,24 +1,29 @@
 ---
 title: 'Write Code'
-description: 'How to get a code change from Squire'
+description: 'How to get code changes from Squire'
 icon: 'robot'
 ---
 
-When on an open PR you can invoke Squire by @ mentioning `@squire` along with the work you want us to take care of.
-Specifically there are two ways:
-1. You highlight a line (or lines), invoke Squire along with your instructions, and select “add single comment”
-2. You can also “start a review” then add as many requests as you want. Once complete and you “Submit review” Squire will complete each task you’ve given it throughout the review.
+Once Squire has completed [a code review](/features/code-review), you can ask Squire to make code changes for you.
 
-## Example
+You ask for changes by:
+1. Reacting to a Squire comment with a thumbs up emoji 👍.
+2. You can react to as many Squire comments as you want fixed, 1 - n.
+3. Write a comment with `/squire ship`.
+4. Squire will then create a new PR with the changes you requested.
 
-`@squire can you camelCase 'parsed_query'?`
+While Squire is working you'll see a GitHub check running.
 
+![GitHub Checks](/images/github-checks.png)
+
+## Example Workflow
+![Write Code](/images/use-tags-to-generate-pr-description.gif)
+
+### Stage Changes
 ![Write Code](/images/write-code-1.png)
 
-Squire will ship a PR with a description of your ask and changes
+### /Squire Ship
+![Write Code](/images/write-code-1.png)
 
+### Squire PR
 ![Write Code](/images/write-code-2.png)
-
-And of course, the fix:
-
-![Write Code](/images/write-code-3.png)

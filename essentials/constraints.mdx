@@ -1,19 +1,25 @@
 ---
 title: 'Constraints'
-description: 'Limitations of the alpha product'
+description: 'Limitations of the beta product'
 icon: 'anchor'
 ---
 
-Today Squire is optimized for Typescript code only (.ts & .tsx), as part of our first launch we’re ensuring accuracy in a language we deeply understand. Very quickly we’ll be opening up our capabilities to all languages when we’re satisfied with our outputs.
-If you want us to consider a specific language send us a note founders@echolayer.com
+## Write Code Constraints
+Squire's ability to [write code](/features/write-code) is optimized for Typescript code only (`.ts` & `.tsx`). Very quickly we’ll be opening up our code writing capabilities to all languages when we’re satisfied with our outputs.
 
+If you want us to consider a specific language send us a note founders@squire.ai
+
+## PR Constraints
 Currently you can not call Squire on the PR that it opens itself.
 
-To put this in context with an example: You have an open PR and ask Squire to change a variable. Squire opens a new PR against yours with the code change. You ask Squire to make another change on Squire's open PR - this will not work.
+To put this in context with an example:
+1. You have an open PR and ask Squire to fix some problems it found during [code review](/features/code-review).
+2. Squire opens a new PR against yours with the code changes.
+3. You try to ask Squire to make another code review on Squire's open PR - this will not work.
 
 ## Interaction Constraints
 
-When you invoke Squire to complete a task treat it like any other engineer, trust that we are working on the change and will post a PR asap. If you update your PR after calling Squire, but before we respond, you should expect a merge conflict accordingly.
+When you invoke Squire to complete a task treat it like any other engineer, trust that we are working on the change and will post a PR asap. You can see Squire's progress in GitHub's checks. If you update your PR after calling Squire, but before we respond, you should expect a merge conflict accordingly.
 
 There are some other example scenarios that could cause merge conflicts during the GitHub workflow today:
 - If you update the existing PR after our bot has shipped a PR

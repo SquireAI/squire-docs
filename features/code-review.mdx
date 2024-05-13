@@ -8,6 +8,33 @@ When on an open pull request you can invoke Squire by writing `/squire review`.
 
 ![Code Review](/images/squire-code-review.png)
 
+## Configurations for Code Review
+Squire will review your code based on the configurations of **Severity** and **Confidence**.
+
+You can set a value for each between 1 (lowest) - 10 (highest).
+
+Meaning, for both settings:
+- If you set 1, you will get more comments
+- If you set 10, you will get less comments
+
+**Severity** means: at 1, any code smell or low impact issue we see we will likely comment on. At 10 we’re only commenting on really scary code issues or large impact changes like vulnerabilities, breaking changes, etc.
+
+**Confidence** means: at 1, we’ll point out anything we think could be an issue. At 10 we’re only commenting when we are very sure there’s an issue.
+
+The defaults for Squire are `--minSev=5 --minConf=5`
+
+## How to test different Configurations
+To test different configurations type a message like this in your PR:
+```
+  /squire review --minSev=10 --minConf=10
+```
+![Configure Reviews](/images/review-configs.png)
+You'll then recieve a review of your code based on these configurations.
+
+<Note>
+We will not save these configurations, they are only for the current review. We are implementing a config soon that will save your settings forever.
+</Note>
+
 ## GitHub Checks
 While Squire is reviewing you'll see a GitHub check running.
 

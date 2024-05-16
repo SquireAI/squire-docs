@@ -1,23 +1,74 @@
 ---
 title: 'Pull Request Description'
-description: 'How to generate Pull Request Descriptions'
+description: 'How to generate & update Pull Request Descriptions'
 icon: 'code-merge'
 ---
 
-Squire will add a summary & detailed changes with any of these three methods:
+Squire will add a summary & changelog with any of these three methods:
 - If you leave the PR description blank, we will fill it for you
 - If you use a PR template, you can now add `{{/squire summary}}` & `{{/squire changes}}`
 - If you edit a description and add either tag we will fill it after you save with the most up to date summary & changes
+
+You can also [update summaries](/features/pull-request-description#update-summaries-after-further-commits) after futher commits.
 
 ## Add summaries to GitHub template
 
 ![Add summaries to GitHub template](/images/squire-pr-template-code.png)
 ![Add summaries to GitHub template](/images/squire-pr-template.png)
 
-## Use tags to generate PR descriptions
+### Steal this template
+
+    ```markdown
+   # Description
+
+    {{/squire summary}}
+
+    ## Changes
+
+    {{/squire changes}}
+
+    ## Type of Change
+    <!-- PLEASE DELETE OPTIONS WHICH DON'T APPLY -->
+
+    - [ ] Tech Debt (refactoring, unit tests, CI changes, pre-commit hooks, etc)
+    - [ ] Bug fix (non-breaking change which fixes an issue)
+    - [ ] New feature (non-breaking change which adds functionality)
+    - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+
+    ## How Has This Been Tested?
+    <!-- 
+        Write unit tests; PRs with no tests will generally not be accepted
+        Describe any manual tests that you ran to verify your changes. 
+        Provide instructions so we can reproduce. 
+    -->
+
+    ## Checklist
+
+    - [ ] I have manually tested my code and all critical paths it effects
+    - [ ] I have added tests for my code
+    - [ ] I have performed a self-review of my code
+    - [ ] I have used comments to provide context, particularly in hard-to-understand areas
+    - [ ] Any dependent changes have been made available in downstream modules
+```
+
+### Use tags to generate PR descriptions
 
 ![Use tags to generate a PR description](/images/edit-to-add-pr-summary.gif)
 
-## Example full summary output
+### Example full summary output
 
 ![Example full summary output](/images/squire-pr-description.png)
+
+## Update Summaries after further commits
+Often Squire wrote your first PR description & changelog, but you've made more commits.
+
+You can update the PR description to the most recent commit & changes by using this command in a comment:
+```json
+/squire update-description
+``` 
+This will update the description to include all commits since the last description was written.
+
+You can also use this command to get an updated summary of the PR as a comment in case you don't want to update the PR description.
+```json
+/squire summary
+```

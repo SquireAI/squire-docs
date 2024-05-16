@@ -1,0 +1,45 @@
+---
+title: 'Configurations'
+description: 'How to configure Squire'
+icon: 'gear'
+---
+
+<Note>
+Configurations are optional. Squire will use it's [defaults](/essentials/configurations#squires-default-configurations) if you do not add a squire.config.json file to your repositories root.
+</Note>
+
+## What you can Configure
+Squire allow's you to configure the following:
+- Code review feedback: You can adjust the weights for [Severity & Confidence](/features/code-review#configurations-for-code-review). Lower scores means more comments and higher scores means less comments.
+- Branch, PR, Commit message naming conventions: You can add prefixes to your branch, PR, and commit messages to meet your organizations merge requirements. Ex. add `{chore}` to every Squire PR title.
+- Custom review instructions: You can add rules for Squire to follow when providing rules. Ex. `Please do not ask me to \"make sure\" of anything`
+
+### Squire's Default Configurations
+Squire's default configurations are:
+- Severity: 5
+- Confidence: 5
+- No branch, PR, or commit message naming conventions
+- No custom review instructions
+
+If you do not add a squire.config.json file to your repositories root, Squire will use these [defaults](/essentials/configurations#squires-default-configurations).
+
+## Setting up Configurations
+Add a `squire.config.json` file to your repositories root.
+
+Here is an example of what you can add to your `squire.config.json` file:
+
+```json
+{
+    "minConfidence": 8,
+    "minSeverity": 7,
+    "reviewInstructions": [
+		"Please do not ask me to \"make sure\" of anything",
+		"Make sure all database options use custom repositories"
+	],
+    "branchPrefix": "eriuqs/",
+    "prTitlePrefix": "Eriuqs:",
+    "commitMessagePrefix": "Eriuqs:"
+}
+```
+
+If you want us to consider adding more configurations, please send us a note: founders@squire.ai

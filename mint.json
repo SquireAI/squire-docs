@@ -50,8 +50,10 @@
     {
       "group": "Essentials",
       "pages": [
-        "essentials/constraints",
-        "essentials/interaction-patterns"
+        "essentials/configurations",
+        "essentials/interaction-patterns",
+        "essentials/add-repos",
+        "essentials/constraints"
       ]
     }
   ],

@@ -44,7 +44,7 @@
       "pages": [
         "features/code-review",
         "features/pull-request-description",
-        "features/write-code"
+        "features/squire-learns"
       ]
     },
     {
@@ -52,13 +52,12 @@
       "pages": [
         "essentials/configurations",
         "essentials/interaction-patterns",
-        "essentials/add-repos",
-        "essentials/constraints"
+        "essentials/add-repos"
       ]
     }
   ],
   "footerSocials": {
-    "github": "https://github.com/echolayer",
-    "linkedin": "https://www.linkedin.com/company/echolayer/"
+    "github": "https://github.com/squireai",
+    "linkedin": "https://www.linkedin.com/company/squireai/"
   }
 }

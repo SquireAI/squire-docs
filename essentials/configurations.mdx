@@ -14,7 +14,7 @@ Squire allow's you to configure the following:
 - Branch, PR, Commit message naming conventions: You can add prefixes to your branch, PR, and commit messages to meet your organizations merge requirements. Ex. add `{chore}` to every Squire PR title.
 - Custom review instructions: You can add rules for Squire to follow when providing rules. Ex. `Please do not ask me to \"make sure\" of anything`
 - If you want an introComment: Squire comments with a description of the PR, you can turn this off.
-- autoReview: Squire will automatically review your PRs, you can turn this off.
+- autoReview: Squire will automatically review your PR on create, you can turn this off.
 
 ### Squire's Default Configurations
 Squire's default configurations are:
@@ -23,7 +23,7 @@ Squire's default configurations are:
 - No branch, PR, or commit message naming conventions
 - No custom review instructions
 - Squire posts an introduction message as a comment
-- Autoreview is on
+- autoReview is on
 
 If you do not add a squire.config.json file to your repositories root, Squire will use these [defaults](/essentials/configurations#squires-default-configurations).
 

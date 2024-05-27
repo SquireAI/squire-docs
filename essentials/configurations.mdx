@@ -11,8 +11,7 @@ Configurations are optional. Squire will use it's [defaults](/essentials/configu
 ## What you can Configure
 Squire allow's you to configure the following:
 - Code review feedback: You can adjust the weights for [Severity & Confidence](/features/code-review#configurations-for-code-review). Lower scores means more comments and higher scores means less comments.
-- Branch, PR, Commit message naming conventions: You can add prefixes to your branch, PR, and commit messages to meet your organizations merge requirements. Ex. add `{chore}` to every Squire PR title.
-- Custom review instructions: You can add rules for Squire to follow when providing rules. Ex. `Please do not ask me to \"make sure\" of anything`
+- Custom review instructions: You can add rules for Squire to follow when performing a code review. Ex. `Please do not ask me to \"make sure\" of anything`
 - If you want an introComment: Squire comments with a description of the PR, you can turn this off.
 - autoReview: Squire will automatically review your PR on create, you can turn this off.
 
@@ -20,7 +19,6 @@ Squire allow's you to configure the following:
 Squire's default configurations are:
 - Severity: 5
 - Confidence: 5
-- No branch, PR, or commit message naming conventions
 - No custom review instructions
 - Squire posts an introduction message as a comment
 - autoReview is on
@@ -42,9 +40,6 @@ Here is an example of what you can add to your `squire.config.json` file:
 	],
     "introComment": true,
     "autoReview": true,
-    "branchPrefix": "eriuqs/",
-    "prTitlePrefix": "Eriuqs:",
-    "commitMessagePrefix": "Eriuqs:"
 }
 ```
 

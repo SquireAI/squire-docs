@@ -14,6 +14,7 @@ Squire allow's you to configure the following:
 - Custom review instructions: You can add rules for Squire to follow when performing a code review. Ex. `Please do not ask me to \"make sure\" of anything`
 - If you want an introComment: Squire comments with a description of the PR, you can turn this off.
 - autoReview: Squire will automatically review your PR on create, you can turn this off.
+- Ignore settings for autoReview, introComment, and PR summaries: you can have Squire ignore specific branches for these three (3) settings by using glob patterns. Syntax example in [Setting up Configurations](#setting-up-configurations).
 
 ### Squire's Default Configurations
 Squire's default configurations are:
@@ -32,15 +33,39 @@ Here is an example of what you can add to your `squire.config.json` file:
 
 ```json
 {
-    "minConfidence": 8,
-    "minSeverity": 7,
+  "review": {
+    "auto": {
+      "enabled": true,
+      "ignoreBranches": ["feature/*", "bugfix/*"]
+    },
     "reviewInstructions": [
-		"Please do not ask me to \"make sure\" of anything",
-		"Make sure all database options use custom repositories"
-	],
-    "introComment": true,
-    "autoReview": true,
+      "Please do not ask me to \"make sure\" of anything",
+      "Make sure all database options use custom repositories"
+    ],
+    "minConfidence": 8,
+    "minSeverity": 7
+  },
+  "summary": {
+    "auto": {
+      "enabled": true,
+      "ignoreBranches": []
+    }
+  },
+  "introComment": {
+    "auto": {
+      "enabled": true,
+      "ignoreBranches": []
+    }
+  }
 }
 ```
+In this configuration:
+
+- review.auto: Controls whether the review feature is enabled and specifies branches to ignore via glob patterns.
+- review.reviewInstructions: Custom instructions for the code review process.
+- review.minConfidence: Minimum confidence of 8/10 required for a review comment.
+- review.minSeverity: Minimum severity of 7/10 required for a review comment.
+- summary.auto: Controls whether the summary feature is enabled and specifies branches to ignore via glob patterns.
+- introComment.auto: Controls whether the intro comment feature is enabled and specifies branches to ignore via glob patterns.
 
 If you want us to consider adding more configurations, please send us a note: founders@squire.ai

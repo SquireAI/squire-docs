@@ -5,7 +5,7 @@ icon: 'gear'
 ---
 
 <Note>
-Configurations are optional. Squire will use it's [defaults](/essentials/configurations#squires-default-configurations) if you do not add a squire.config.json file to your repositories root.
+Configurations are optional. Squire will use it's [defaults](/essentials/configurations#squires-default-configurations) if you do not add a `squire.config.json` file to your repositories root.
 </Note>
 
 ## What you can Configure
@@ -36,7 +36,7 @@ Here is an example of what you can add to your `squire.config.json` file:
   "review": {
     "auto": {
       "enabled": true,
-      "ignoreBranches": ["production", "staging", "chore/*"]
+      "ignoreBranches": ["production", "staging"]
     },
     "reviewInstructions": [
       "Please do not ask me to \"make sure\" of anything",
@@ -62,6 +62,7 @@ Here is an example of what you can add to your `squire.config.json` file:
 In this configuration:
 
 - review.auto: Controls whether the review feature is enabled and specifies branches to ignore via glob patterns.
+- review.auto.ignoreBranches: Squire will **not** review code being merged into the base branches of: `"production" & "staging"`.
 - review.reviewInstructions: Custom instructions for the code review process.
 - review.minConfidence: Minimum confidence of 8/10 required for a review comment.
 - review.minSeverity: Minimum severity of 7/10 required for a review comment.

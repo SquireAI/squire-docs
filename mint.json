@@ -45,6 +45,7 @@
         "features/code-review",
         "features/pull-request-description",
         "features/standards",
+        "features/chat-with-squire",
         "features/squire-learns"
       ]
     },

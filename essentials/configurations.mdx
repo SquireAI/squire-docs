@@ -5,26 +5,19 @@ icon: 'gear'
 ---
 
 <Note>
-Configurations are optional. Squire will use it's [defaults](/essentials/configurations#squires-default-configurations) if you do not add a `squire.config.json` file to your repositories root.
+Configurations are optional. Squire will use [defaults](/essentials/configurations#squires-default-configurations) otherwise.
 </Note>
 
 ## What you can Configure
 Squire allow's you to configure the following:
-- Code review feedback: You can adjust the weights for [Severity & Confidence](/features/code-review#configurations-for-code-review). Lower scores means more comments and higher scores means less comments.
-- Custom review instructions: You can add rules for Squire to follow when performing a code review. Ex. `Please do not ask me to \"make sure\" of anything`
-- If you want an introComment: Squire comments with a description of the PR, you can turn this off.
-- autoReview: Squire will automatically review your PR on create, you can turn this off.
+- If you want an introComment: Squire comments with a description of what it can do and it's commands, you can turn this off.
+- If you want a PR summary: Squire will write a summary and changes in the PR description if left blank, you can turn this off.
+- If you want a code review: Squire will automatically review your PR on creation, you can turn this off.
 - Ignore settings for autoReview, introComment, and PR summaries: you can have Squire ignore specific base branches for these three (3) settings by using glob patterns. Syntax example in [Setting up Configurations](#setting-up-configurations).
+- Add [custom standards](/features/standards) to Squire to help review code to your companies standards.
 
 ### Squire's Default Configurations
-Squire's default configurations are:
-- Severity: 5
-- Confidence: 5
-- No custom review instructions
-- Squire posts an introduction message as a comment
-- autoReview is on
-
-If you do not add a squire.config.json file to your repositories root, Squire will use these [defaults](/essentials/configurations#squires-default-configurations).
+Squire's default configurations are designed to provide a balance between providing feedback and not overwhelming you with comments.  
 
 ## Setting up Configurations
 Add a `squire.config.json` file to your repositories root.
@@ -38,12 +31,6 @@ Here is an example of what you can add to your `squire.config.json` file:
       "enabled": true,
       "ignoreBranches": ["production", "staging"]
     },
-    "reviewInstructions": [
-      "Please do not ask me to \"make sure\" of anything",
-      "Make sure all database options use custom repositories"
-    ],
-    "minConfidence": 8,
-    "minSeverity": 7
   },
   "summary": {
     "auto": {
@@ -63,10 +50,7 @@ In this configuration:
 
 - review.auto: Controls whether the review feature is enabled and specifies branches to ignore via glob patterns.
 - review.auto.ignoreBranches: Squire will **not** review code being merged into the base branches of: `"production" & "staging"`.
-- review.reviewInstructions: Custom instructions for the code review process.
-- review.minConfidence: Minimum confidence of 8/10 required for a review comment.
-- review.minSeverity: Minimum severity of 7/10 required for a review comment.
 - summary.auto: Controls whether the summary feature is enabled and specifies branches to ignore via glob patterns.
-- introComment.auto: Controls whether the intro comment feature is enabled and specifies branches to ignore via glob patterns.
+- introComment.auto: Controls whether the intro comment is enabled and specifies branches to ignore via glob patterns.
 
 If you want us to consider adding more configurations, please send us a note: founders@squire.ai

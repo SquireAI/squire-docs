@@ -44,7 +44,7 @@
       "pages": [
         "features/code-review",
         "features/pull-request-description",
-        "features/standards",
+        "features/rules",
         "features/chat-with-squire",
         "features/squire-learns"
       ]

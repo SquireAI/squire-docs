@@ -19,4 +19,60 @@ To add a custom rule:
 
 ![Create a custom rule](/images/create-a-rule.png)
 
+- Write what you want Squire to check for in plain English
+
+![Write a custom rule](/images/write-a-rule.png)
+
+### Under the Hood 🏎️
+
+- Everytime Squire is reviewing a diff in a code review, it'll check the rules for that repository.
+- If a change is made which violates a rule, Squire will identify this, and leave a comment in the PR.
+
+### What makes a good rule?
+
+- A good rule is clear and concise
+
+Ex.
+```markdown
+✅ Good Example:
+
+All functions should be accompanied by clear documentation and comments in the form of docstrings for better understanding and maintenance.
+
+❌ Bad Example:
+Include documentation for functions.
+```
+
+- A good rule provides examples
+
+```markdown
+✅ Good Example:
+Implement proper error handling to prevent the application from crashing and provide meaningful error messages.
+Example:
+~~~python
+# Python: No error handling
+file = open('data.txt', 'r')
+data = file.read()
+
+# Fix: Add error handling
+try:
+    with open('data.txt', 'r') as file:
+        data = file.read()
+except FileNotFoundError:
+    print("Error: The file 'data.txt' was not found.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+~~~
+```
+
+- A good rule is objective
+
+```
+✅ Good Example:
+Functions should have no more than 20 lines of code.
+
+❌ Bad Example:
+Functions should not be too long.
+```
+
+
 In addition to rules [Squire learns](/features/squire-learns) from your 👍 or 👎 feedback on comments during reviews to provide even better reviews for you over time.
